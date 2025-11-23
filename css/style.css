@@ -1,0 +1,233 @@
+/* Custom Styles for Swiss Modern & Bento */
+
+:root {
+    --accent-color: #FF4500;
+    --bg-light: #FAFAFA;
+    --bg-dark: #050505;
+    --text-dark: #050505;
+    --text-light: #FAFAFA;
+}
+
+/* Base & Typography */
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.5;
+}
+.bg-light { background-color: var(--bg-light); }
+.bg-dark { background-color: var(--bg-dark); }
+.text-dark { color: var(--text-dark); }
+.text-light { color: var(--text-light); }
+.text-neutral-600 { color: #525252; }
+.accent-color { color: var(--accent-color); }
+
+.container { max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+.py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.text-center { text-align: center; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mb-12 { margin-bottom: 3rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-xl { font-size: 1.25rem; }
+.font-extrabold { font-weight: 800; }
+.font-bold { font-weight: 700; }
+.divider { margin: 4rem auto; border: 0; border-top: 1px solid #e5e5e5; max-width: 1280px; }
+
+/* Header */
+.header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 1rem;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+}
+.nav { display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+.logo, .logo-footer { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.025em; color: var(--accent-color); }
+.cta-button { padding: 0.5rem 1rem; border-radius: 9999px; font-weight: bold; transition: transform 0.2s; }
+.cta-button:hover { transform: scale(1.02); }
+
+/* Hero Section */
+.hero-section {
+    height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem;
+    padding-top: 4rem; 
+}
+.hero-content { max-width: 1024px; }
+.hero-headline {
+    font-size: 6rem; 
+    line-height: 1;
+    font-weight: 800; 
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+    .hero-headline { font-size: 8rem; } 
+}
+@media (min-width: 1024px) {
+    .hero-headline { font-size: 9rem; } 
+}
+.hero-subtext { font-size: 1.25rem; max-width: 48rem; margin: 0 auto; font-weight: 500; }
+.cta-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-top: 2.5rem; padding: 1rem 2.5rem; font-size: 1.25rem;
+    font-weight: bold; border-radius: 9999px;
+    transition: all 0.2s; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.cta-primary:hover { background-color: #333; transform: scale(1.03); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+.icon-right { width: 1.25rem; height: 1.25rem; margin-left: 0.5rem; }
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+    .bento-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.bento-card {
+    padding: 2.5rem; border-radius: 1rem; border: 1px solid #e5e5e5;
+    background-color: white; color: var(--text-dark);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s ease;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.bento-card:hover { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); border-color: var(--accent-color); transform: scale(1.01); } 
+
+@media (min-width: 1024px) {
+    .bento-card.is-primary {
+        grid-column: span 2;
+        grid-row: span 2;
+        min-height: 400px; 
+    }
+}
+
+.icon-large { width: 2.5rem; height: 2.5rem; margin-bottom: 1rem; stroke-width: 1.5; }
+.card-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.75rem; line-height: 1.3; }
+.card-description { font-size: 1.125rem; color: #525252; }
+
+
+/* Tier Member Grid */
+.tier-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    .tier-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px) {
+    .tier-grid { grid-template-columns: repeat(6, 1fr); }
+}
+.member-card {
+    background-color: white; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e5e5; text-align: center;
+}
+.member-photo {
+    width: 4rem; height: 4rem; background-color: #e5e5e5; border-radius: 50%;
+    margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center;
+    font-weight: bold; color: #333;
+}
+.member-name { font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem; }
+.member-comment { font-size: 0.875rem; color: #525252; font-style: italic; }
+
+/* Episode Section */
+.episode-container {
+    display: flex; flex-direction: column; gap: 2rem;
+    max-width: 800px; margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .episode-container { flex-direction: row; }
+}
+.episode-card {
+    padding: 2rem; border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    background-color: white; border: 1px solid #e5e5e5; flex: 1;
+    text-align: left;
+}
+.utilizer-message {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e5e5e5;
+    font-size: 1rem; font-weight: 500; text-align: left;
+    max-width: 800px; margin-left: auto; margin-right: auto;
+}
+
+/* Statement Section */
+.statement-section { padding-top: 6rem; padding-bottom: 9rem; } 
+.statement-headline {
+    font-size: 2.5rem; 
+    font-weight: 800;
+    line-height: 1.1;
+    max-width: 64rem; margin: 0 auto; letter-spacing: -0.025em;
+}
+@media (min-width: 768px) {
+    .statement-headline { font-size: 4rem; } 
+}
+@media (min-width: 1024px) {
+    .statement-headline { font-size: 4.5rem; } 
+}
+
+/* Q&A Section */
+.qa-list {
+    max-width: 768px; margin: 0 auto;
+}
+.qa-item {
+    border-bottom: 1px solid #e5e5e5; padding-top: 1rem; padding-bottom: 1rem;
+}
+.qa-q { font-size: 1.25rem; font-weight: bold; color: var(--text-dark); }
+.qa-a { margin-top: 0.5rem; font-size: 1.125rem; color: #525252; padding-left: 1rem; border-left: 2px solid #ccc; }
+
+
+/* Call to Action */
+.cta-secondary {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 1.25rem 3rem; font-size: 1.25rem;
+    font-weight: 900; border-radius: 9999px;
+    border: 4px solid var(--accent-color);
+    background-color: var(--bg-light);
+    color: var(--accent-color);
+    transition: all 0.3s;
+}
+.cta-secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    box-shadow: 0 10px 15px -3px rgba(255, 69, 0, 0.3);
+}
+
+/* Footer */
+.footer { padding: 2.5rem; }
+.footer-content { border-top: 1px solid #404040; padding-top: 2rem; }
+.footer-nav { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; }
+@media (min-width: 768px) {
+    .footer-nav { flex-direction: row; align-items: center; }
+}
+.logo-footer { margin-bottom: 1rem; }
+@media (min-width: 768px) {
+    .logo-footer { margin-bottom: 0; }
+}
+.footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.footer-link { font-size: 1.125rem; font-weight: bold; transition: color 0.2s; color: var(--text-light); }
+.footer-link:hover { color: var(--accent-color); }
+.copyright { margin-top: 2rem; font-size: 0.875rem; text-align: center; color: #a3a3a3; }
+@media (min-width: 768px) {
+    .copyright { text-align: right; }
+}
+
+/* Reveal Animation (JSによって is-visible クラスが付与されることを想定) */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
